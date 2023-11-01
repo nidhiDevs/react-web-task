@@ -75,7 +75,7 @@ function App() {
             </div>
             <div>
               <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
-                Other Cities
+                Other Cities 4567
               </h1>
               {popularCitiesInIndia.slice(0, 10).map((popularCity) => (
                 <div className="font-medium text-gray-900" key={popularCity.id}>
