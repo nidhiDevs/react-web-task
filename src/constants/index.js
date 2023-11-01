@@ -123,15 +123,32 @@ export const Banquet = [
 ];
 
 export const topCitiesInIndia = [
-    { id: 1, name: "Mumbai" },
-    { id: 2, name: "Delhi" },
+    { id: 1, name: "All Cities" },
+    { id: 2, name: "Delhi NCR" },
     { id: 3, name: "Bangalore" },
     { id: 4, name: "Hyderabad" },
     { id: 5, name: "Ahmedabad" },
     { id: 6, name: "Chennai" },
     { id: 7, name: "Kolkata" },
     { id: 8, name: "Pune" },
-    { id: 9, name: "Surat" },
+    { id: 9, name: "Mumbai" },
     { id: 10, name: "Jaipur" },
   ];
+
+  export const popularCitiesInIndia = [
+    { id: 11, name: "Bengaluru" },
+    { id: 12, name: "Kochi" },
+    { id: 13, name: "Chandigarh" },
+    { id: 14, name: "Goa" },
+    { id: 15, name: "Agra" },
+    { id: 16, name: "Varanasi" },
+    { id: 17, name: "Amritsar" },
+    { id: 18, name: "Lucknow" },
+    { id: 19, name: "Bhopal" },
+    { id: 20, name: "Nagpur" },
+    { id: 21, name: "Indore" },
+    { id: 22, name: "Mysuru" },
+    { id: 23, name: "Jaipur" },
+  ];
+  
 
