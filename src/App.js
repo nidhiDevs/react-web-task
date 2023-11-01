@@ -66,15 +66,16 @@ function App() {
                 Other Cities
               </h1>
               {popularCitiesInIndia.slice(0, 10).map((popularCity) => (
-                <div className="" key={popularCity.id}>{popularCity.name}</div>
+                <div className="" key={popularCity.id}>
+                  {popularCity.name}
+                </div>
               ))}
-              
             </div>
             <div>
-            <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
-            International Cities
+              <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
+                International Cities
               </h1>
-             </div>
+            </div>
           </div>
         </div>
       </Modal>
