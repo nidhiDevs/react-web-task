@@ -5,9 +5,19 @@ import Modal from "./components/Modal";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { themeColors } from "./theme";
-
+import { popularCitiesInIndia, topCitiesInIndia } from "./constants";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const[search, setSearch] = useState('');
+  const[filterSearch, setSearchFilter] = useState(popularCitiesInIndia);
+  const handleSearch =(e)=>{
+    const search = e.target.value;
+    setSearch(search);
+    const filterData = ()=>{
+      filterSearch.name.includes(search);
+    }
+    setSearchFilter(filterData)
+  }
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -35,19 +45,52 @@ function App() {
           </div>
           <input
             type="text"
+            value={search}
+            onChange={handleSearch}
             className="w-full py-2 pl-4 pr-12 rounded-full focus:outline-none"
             placeholder="Search City..."
           />
         </div>
         <div>
-          <div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6 p-4"
-            style={{ color: themeColors.primary }}
-          >
-            <div>Top Cities</div>
-            <div>Popular Cities</div>
-            <div>Other Cities</div>
-            <div>International Cities</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6 p-4">
+            <div>
+              <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
+                Top Cities
+              </h1>
+              {topCitiesInIndia.slice(0, 10).map((city) => (
+                <div key={city.id} className="font-medium text-gray-900">
+                  {city.name}
+                </div>
+              ))}
+            </div>
+            <div>
+              <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
+                Popular Cities
+              </h1>
+              {popularCitiesInIndia.slice(0, 10).map((city) => (
+                <div key={city.id} className="font-medium text-gray-900">
+                  {city.name}
+                </div>
+              ))}
+            </div>
+            <div>
+              <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
+                Other Cities
+              </h1>
+              {popularCitiesInIndia.slice(0, 10).map((popularCity) => (
+                <div className="font-medium text-gray-900" key={popularCity.id}>
+                  {popularCity.name}
+                </div>
+              ))}
+            </div>
+            <div>
+              <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
+                International Cities
+              </h1>
+              {topCitiesInIndia.slice(0.10).map((city)=>(
+                <div key={city.id} className="font-medium text-gray-900">{city.name}</div>
+              ))}
+            </div>
           </div>
         </div>
       </Modal>
