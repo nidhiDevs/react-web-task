@@ -1,4 +1,3 @@
-
 export const Banquet = [
     {
         id: 1,
@@ -122,4 +121,17 @@ export const Banquet = [
     },
   
 ];
+
+export const topCitiesInIndia = [
+    { id: 1, name: "Mumbai" },
+    { id: 2, name: "Delhi" },
+    { id: 3, name: "Bangalore" },
+    { id: 4, name: "Hyderabad" },
+    { id: 5, name: "Ahmedabad" },
+    { id: 6, name: "Chennai" },
+    { id: 7, name: "Kolkata" },
+    { id: 8, name: "Pune" },
+    { id: 9, name: "Surat" },
+    { id: 10, name: "Jaipur" },
+  ];
 
