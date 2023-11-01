@@ -157,9 +157,6 @@ export const popularCitiesInIndia = [
 ];
 
 export const otherCitiesInIndia = [
-  { id: 21, name: "Kanpur" },
-  { id: 22, name: "Visakhapatnam" },
-  { id: 23, name: "Thane" },
   { id: 24, name: "Pimpri-Chinchwad" },
   { id: 25, name: "Patna" },
   { id: 26, name: "Vadodara" },
@@ -176,7 +173,6 @@ export const otherCitiesInIndia = [
   { id: 37, name: "Srinagar" },
   { id: 38, name: "Dhanbad" },
   { id: 39, name: "Amritsar" },
-  { id: 40, name: "Navi Mumbai" },
   { id: 41, name: "Allahabad" },
   { id: 42, name: "Howrah" },
   { id: 43, name: "Coimbatore" },
@@ -192,7 +188,6 @@ export const otherCitiesInIndia = [
   { id: 53, name: "Saharanpur" },
   { id: 54, name: "Mangalore" },
   { id: 55, name: "Raurkela" },
-  { id: 56, name: "Muzaffarpur" },
   { id: 57, name: "Dehradun" },
   { id: 58, name: "Kollam" },
   { id: 59, name: "Mathura" },
@@ -243,7 +238,6 @@ export const otherCitiesInIndia = [
   { id: 104, name: "Kollam" },
   { id: 105, name: "Muzaffarpur" },
   { id: 106, name: "Dewas" },
-  { id: 107, name: "Noida" },
   { id: 108, name: "Thoothukudi" },
   { id: 109, name: "Haridwar" },
   { id: 110, name: "Aizawl" },
@@ -274,7 +268,6 @@ export const otherCitiesInIndia = [
   { id: 135, name: "Panipat" },
   { id: 136, name: "Darbhanga" },
   { id: 137, name: "Unnao" },
-  { id: 138, name: "Munger" },
   { id: 139, name: "Ongole" },
   { id: 140, name: "Madanapalle" },
   { id: 141, name: "Shivpuri" },
@@ -341,7 +334,7 @@ export const otherCitiesInIndia = [
   { id: 202, name: "Raipur" },
   { id: 203, name: "Kollam" },
   { id: 204, name: "Munger" },
-  { id: 205, name: "Noida" },
+  { id: 205, name: "" },
   { id: 206, name: "Parbhani" },
   { id: 207, name: "Chapra" },
   { id: 208, name: "Anand" },
@@ -357,4 +350,34 @@ export const otherCitiesInIndia = [
   { id: 218, name: "Guntur" },
   { id: 219, name: "Nagercoil" },
   { id: 220, name: "Panvel" },
+];
+
+export const internationalCities = [
+  { id: 221, name: "New York" },
+  { id: 222, name: "London" },
+  { id: 223, name: "Paris" },
+  { id: 224, name: "Tokyo" },
+  { id: 225, name: "Sydney" },
+  { id: 226, name: "Los Angeles" },
+  { id: 227, name: "Berlin" },
+  { id: 228, name: "Dubai" },
+  { id: 229, name: "Beijing" },
+  { id: 230, name: "Amsterdam" },
+  { id: 231, name: "Rome" },
+  { id: 232, name: "Toronto" },
+  { id: 233, name: "Singapore" },
+  { id: 234, name: "Istanbul" },
+
+  { id: 236, name: "Rio de Janeiro" },
+  { id: 237, name: "Cairo" },
+  { id: 238, name: "Seoul" },
+  { id: 239, name: "Moscow" },
+  { id: 240, name: "Cape Town" },
+];
+
+export const allCities = [
+  ...topCitiesInIndia,
+  ...popularCitiesInIndia,
+  ...otherCitiesInIndia,
+  ...internationalCities,
 ];

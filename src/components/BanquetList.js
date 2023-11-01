@@ -47,7 +47,7 @@ const BanquetList = ({ banquetData }) => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-6 p-4">
-        {filteredBanquets.map((banquet) => (
+        {filteredBanquets.slice(0, 3).map((banquet) => (
           <BanquetCard key={banquet.id} banquet={banquet} />
         ))}
       </div>
