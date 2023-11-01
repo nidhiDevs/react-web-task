@@ -5,7 +5,7 @@ import Modal from "./components/Modal";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { themeColors } from "./theme";
-
+import { topCitiesInIndia } from "./constants";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -14,6 +14,7 @@ function App() {
   };
 
   const closeModal = () => {
+    
     setIsModalOpen(false);
   };
   return (
@@ -40,11 +41,15 @@ function App() {
           />
         </div>
         <div>
-          <div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6 p-4"
-            style={{ color: themeColors.primary }}
-          >
-            <div>Top Cities</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6 p-4">
+            <div>
+              <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
+                Top Cities
+              </h1>
+              {topCitiesInIndia.slice(0,6).map((city) => (
+                <div key={city.id}>{city.name}</div>
+              ))}
+            </div>
             <div>Popular Cities</div>
             <div>Other Cities</div>
             <div>International Cities</div>
