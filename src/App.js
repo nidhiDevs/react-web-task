@@ -66,7 +66,7 @@ function App() {
                 Other Cities
               </h1>
               {popularCitiesInIndia.slice(0, 10).map((popularCity) => (
-                <div className="" key={popularCity.id}>
+                <div className="font-medium text-gray-900" key={popularCity.id}>
                   {popularCity.name}
                 </div>
               ))}
@@ -75,6 +75,9 @@ function App() {
               <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
                 International Cities
               </h1>
+              {topCitiesInIndia.slice(0.10).map((city)=>(
+                <div key={city.id} className="font-medium text-gray-900">{city.name}</div>
+              ))}
             </div>
           </div>
         </div>
