@@ -8,6 +8,16 @@ import { themeColors } from "./theme";
 import { popularCitiesInIndia, topCitiesInIndia } from "./constants";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const[search, setSearch] = useState('');
+  const[filterSearch, setSearchFilter] = useState(popularCitiesInIndia);
+  const handleSearch =(e)=>{
+    const search = e.target.value;
+    setSearch(search);
+    const filterData = ()=>{
+      filterSearch.name.includes(search);
+    }
+    setSearchFilter(filterData)
+  }
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -35,6 +45,8 @@ function App() {
           </div>
           <input
             type="text"
+            value={search}
+            onChange={handleSearch}
             className="w-full py-2 pl-4 pr-12 rounded-full focus:outline-none"
             placeholder="Search City..."
           />
