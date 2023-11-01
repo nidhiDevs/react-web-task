@@ -5,7 +5,7 @@ import Modal from "./components/Modal";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { themeColors } from "./theme";
-import { topCitiesInIndia } from "./constants";
+import { popularCitiesInIndia, topCitiesInIndia } from "./constants";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -14,7 +14,6 @@ function App() {
   };
 
   const closeModal = () => {
-    
     setIsModalOpen(false);
   };
   return (
@@ -46,13 +45,36 @@ function App() {
               <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
                 Top Cities
               </h1>
-              {topCitiesInIndia.slice(0,6).map((city) => (
-                <div key={city.id}>{city.name}</div>
+              {topCitiesInIndia.slice(0, 10).map((city) => (
+                <div key={city.id} className="font-medium text-gray-900">
+                  {city.name}
+                </div>
               ))}
             </div>
-            <div>Popular Cities</div>
-            <div>Other Cities</div>
-            <div>International Cities</div>
+            <div>
+              <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
+                Popular Cities
+              </h1>
+              {popularCitiesInIndia.slice(0, 10).map((city) => (
+                <div key={city.id} className="font-medium text-gray-900">
+                  {city.name}
+                </div>
+              ))}
+            </div>
+            <div>
+              <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
+                Other Cities
+              </h1>
+              {popularCitiesInIndia.slice(0, 10).map((popularCity) => (
+                <div className="" key={popularCity.id}>{popularCity.name}</div>
+              ))}
+              
+            </div>
+            <div>
+            <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
+            International Cities
+              </h1>
+             </div>
           </div>
         </div>
       </Modal>
