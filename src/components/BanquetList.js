@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import BanquetCard from "./BanquetCard"; // Import your BanquetCard component
 
-const BanquetList = ({ banquetData }) => {
+const BanquetList = ({ banquetData,setopen }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredBanquets, setFilteredBanquets] = useState(banquetData);
 
@@ -41,8 +41,11 @@ const BanquetList = ({ banquetData }) => {
             placeholder="Search by location"
             value={searchTerm}
             onChange={handleSearch}
-            className="p-2 border border-gray-300 text-gray-900 focus:border-gray-400 rounded w-[100%]"
+            className="p-2 border border-gray-300 text-gray-900 outline-none focus:border-gray-400 rounded w-[100%]"
           />
+        </div>
+        <div className="">
+          <button onClick={setopen}>Open Modal</button>
         </div>
       </div>
 

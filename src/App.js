@@ -5,23 +5,36 @@ import Modal from "./components/Modal";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { themeColors } from "./theme";
-import { otherCitiesInIndia, popularCitiesInIndia, topCitiesInIndia } from "./constants";
+import {
+  otherCitiesInIndia,
+  popularCitiesInIndia,
+  topCitiesInIndia,
+} from "./constants";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // const[search, setSearch] = useState('');
-  // const[filterSearch, setSearchFilter] = useState(popularCitiesInIndia);
-  // const handleSearch =(e)=>{
-  //   const search = e.target.value;
-  //   setSearch(search);
-  //   const filterData = popularCitiesInIndia.filter((searchByCity)=>
-  //     searchByCity.name.includes(search)
-  //   )
-  //   setSearchFilter(filterData);   
-  //   const filtered = banquetData.filter((banquet) =>
-  //   banquet.location.toLowerCase().includes(term)
-  // );
-  // }
+  const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [filterSearch, setSearchFilter] = useState(popularCitiesInIndia);
+  const itemsPerPage = 10;
+  const handleSearch = (e) => {
+    const storeValue = e.target.value.toLowerCase();
+    setSearch(storeValue);
+    const filterData = popularCitiesInIndia.filter((searchByCity) =>
+      searchByCity.name.toLowerCase().includes(search)
+    );
+    setSearchFilter(filterData);
+  };
+  const nextPage = () => {
+    if (currentPage < Math.ceil(filterSearch.length / itemsPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
 
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -36,7 +49,7 @@ function App() {
       </div>
       <MyNavbar />
 
-      <Modal
+      <Modal 
         isOpen={isModalOpen}
         onClose={closeModal}
         width="1000px"
@@ -48,6 +61,8 @@ function App() {
           </div>
           <input
             type="text"
+            value={search}
+            onChange={handleSearch}
             className="w-full py-2 pl-4 pr-12 rounded-full focus:outline-none"
             placeholder="Search City..."
           />
@@ -56,7 +71,7 @@ function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6 p-4">
             <div>
               <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
-                Top Cities 344  344 355 366 377
+                Top Cities
               </h1>
               {topCitiesInIndia.slice(0, 10).map((city) => (
                 <div key={city.id} className="font-medium text-gray-900">
@@ -88,15 +103,30 @@ function App() {
               <h1 style={{ color: themeColors.primary, fontWeight: "bold" }}>
                 International Cities 123
               </h1>
-              {topCitiesInIndia.slice(0.10).map((city)=>(
-                <div key={city.id} className="font-medium text-gray-900">{city.name}</div>
+              {filterSearch.slice(0, 10).map((city) => (
+                <div key={city.id} className="font-medium text-gray-900">
+                  {city.name}
+                </div>
               ))}
+              <div>
+                <button onClick={prevPage} disabled={currentPage === 1}>
+                  Previous
+                </button>
+                <button
+                  onClick={nextPage}
+                  disabled={
+                    currentPage ===
+                    Math.ceil(filterSearch.length / itemsPerPage)
+                  }
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </Modal>
-
-      <Main />
+      <Main  openModal={openModal}/>
     </div>
   );
 }

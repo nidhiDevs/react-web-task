@@ -15,6 +15,7 @@ const Modal = ({ isOpen, onClose,width, height, children }) => {
           &times;
         </button>
         {children}
+        
       </div>
     </div>
   );

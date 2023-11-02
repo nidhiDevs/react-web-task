@@ -3,12 +3,10 @@ import { Banquet } from "../constants/index";
 import BanquetList from "./BanquetList";
 
 
-function Main() {
-
+function Main({openModel}) {
   return (
-    <div className="">
-      
-      <BanquetList banquetData={Banquet} />
+    <div className="">      
+      <BanquetList banquetData={Banquet} setopen={openModel} />
     </div>
   );
 }
