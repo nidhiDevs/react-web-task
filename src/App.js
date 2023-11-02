@@ -13,9 +13,7 @@ import {
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [search, setSearch] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
   const [filterSearch, setSearchFilter] = useState(popularCitiesInIndia);
-  const itemsPerPage = 10;
   const handleSearch = (e) => {
     const storeValue = e.target.value.toLowerCase();
     setSearch(storeValue);
@@ -24,17 +22,7 @@ function App() {
     );
     setSearchFilter(filterData);
   };
-  const nextPage = () => {
-    if (currentPage < Math.ceil(filterSearch.length / itemsPerPage)) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const prevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
+ 
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -108,7 +96,7 @@ function App() {
                   {city.name}
                 </div>
               ))}
-              <div>
+              {/* <div>
                 <button onClick={prevPage} disabled={currentPage === 1}>
                   Previous
                 </button>
@@ -121,7 +109,7 @@ function App() {
                 >
                   Next
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
